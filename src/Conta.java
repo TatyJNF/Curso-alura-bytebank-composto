@@ -1,5 +1,5 @@
 public class Conta {
-    double saldo = 100;
+    private double saldo;
     int agencia;
     int numero;
     Cliente titular;
@@ -21,12 +21,12 @@ public class Conta {
         if (this.saldo >= valor) {
             this.saldo -= valor;
             destino.deposita(valor);
-            System.out.println("transferencia realizada com sucesso");
             return true;
-        } else {
-            System.out.println("saldo insuficiente");
-            return false;
         }
+        return false;
     }
 
+    public double getSaldo() {
+        return this.saldo;
+    }
 }
